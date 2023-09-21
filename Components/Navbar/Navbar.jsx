@@ -4,9 +4,9 @@ import Link from "next/link";
 
 const navigation = [
   { name: "Home", href: "/", current: true },
-  { name: "Login", href: "/login", current: false },
-  { name: "Signup", href: "/signup", current: false },
-  { name: "Profile", href: "/profile", current: false },
+  { name: "Login", href: "/Login", current: false },
+  { name: "Signup", href: "/SignUp", current: false },
+  { name: "Profile", href: "/Profile", current: false },
 ];
 
 function classNames(...classes) {
@@ -38,16 +38,9 @@ export default function Navbar() {
                       <Link
                         key={item.name}
                         href={item.href}
-                        className={({ isActive }) =>
-                          classNames(
-                            isActive
-                              ? "bg-gray-900 text-white"
-                              : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                            "rounded-md px-3 py-2 text-sm font-medium"
-                          )
-                        }
+                        className="text-gray-300 hover:bg-gray-700 hover:text-white text-lg font-mono p-2 m-3 border rounded-md font-bold"
                       >
-                         {item.name}
+                        {item.name}
                       </Link>
                     </>
                   ))}
