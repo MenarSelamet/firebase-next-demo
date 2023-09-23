@@ -7,10 +7,17 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const signIn = async (e) => {
-    e.preventDefault();
+const signIn = async (e) => {
+  e.preventDefault();
+  try {
     await signInWithEmailAndPassword(auth, email, password);
-  };
+    // Redirect or handle successful sign-in
+  } catch (error) {
+    console.error("Error signing in:", error.message);
+    // Handle the error (e.g., show an error message to the user)
+  }
+};
+
 
   return (
     <>
