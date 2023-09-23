@@ -7,17 +7,10 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-const signIn = async (e) => {
-  e.preventDefault();
-  try {
+  const signIn = async (e) => {
+    e.preventDefault();
     await signInWithEmailAndPassword(auth, email, password);
-    // Redirect or handle successful sign-in
-  } catch (error) {
-    console.error("Error signing in:", error.message);
-    // Handle the error (e.g., show an error message to the user)
-  }
-};
-
+  };
 
   return (
     <>
@@ -78,7 +71,7 @@ const signIn = async (e) => {
 
                 <div className="text-sm">
                   <Link
-                    href="/SignUp"
+                    href="/signup"
                     className="font-medium text-indigo-600 hover:text-indigo-500"
                   >
                     Create an account
